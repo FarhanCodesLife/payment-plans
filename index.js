@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const percent1 = parseFloat(document.querySelector('[name="percent1"]').value) || 22;
         const percent2 = parseFloat(document.querySelector('[name="percent2"]').value) || 44;
         const advance1 = parseFloat(document.querySelector('[name="advance1"]').value) || 2.5;
-        const advance2 = parseFloat(document.querySelector('[name="advance2"]').value) || 5;
+        const advance2 = parseFloat(document.querySelector('[name="advance2"]').value) || 4.5;
         const cashPrice = parseFloat(document.querySelector('[name="price1"]').value) || 0;
 
 
