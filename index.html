@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+.plan-results {
+                border: 2px solid #ccc;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                padding: 25px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+
+
+            .plan-results h3 {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: #333;
+                text-align: center;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+
+
+            .plan-results p {
+                font-size: 18px;
+                margin: 15px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+
+            .plan-results p span {
+                font-weight: 700;
+                color: #28a745;
+                font-size: 20px;
+            }
+
+
+            .plan-results:hover {
+                transform: translateY(-2px);
+                transition: transform 0.2s ease;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+
+        body {
+            background-color: #f5f7fa;
+            color: #1a1f36;
+            line-height: 1.6;
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #1a1f36;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+
+        .input-container {
+            display: grid;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+
+        input {
+            padding: 0.8rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+
+        input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+
+
+        #calculate-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+
+        #calculate-btn:hover {
+            background-color: #3182ce;
+        }
+
+
+        .results-container {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+
+        .plan-results {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+
+        .plan-results h3 {
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+
+        .plan-results p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            color: #4a5568;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+
+        .plan-results span {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+
+        .plan-results:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media (max-width: 640px) {
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Plan Calculator</h1>
+       
+
+
+
+
+        <div id="input" class="input-container">
+            <div class="input-group">
+                <label for="percent1">Percent Plan 1</label>
+                <input id="percent1" placeholder="22" name="percent1" required type="text">
+            </div>
+           
+            <div class="input-group">
+                <label for="percent2">Percent Plan 2</label>
+                <input id="percent2" placeholder="44" name="percent2" required type="text">
+            </div>
+           
+            <div class="input-group">
+                <label for="advance1">Advance Divide Plan 1</label>
+                <input id="advance1" placeholder="2.5" name="advance1" required type="text">
+            </div>
+           
+            <div class="input-group">
+                <label for="advance2">Advance Divide Plan 2</label>
+                <input id="advance2" placeholder="4.5" name="advance2" required type="text">
+            </div>
+
+
+            <div class="input-group">
+                <label for="price1">Cash Price</label>
+                <input id="price1" required class="model-name" name="price1" type="number" placeholder="Enter cash price">
+            </div>
+        </div>
+
+
+        <button id="calculate-btn" type="button">Calculate Plans</button>
+        <style>
+            .results-container {
+                display: none;
+            }
+            .results-container.show {
+                display: block;
+            }
+        </style>
+        <script>
+            document.getElementById('calculate-btn').addEventListener('click', function() {
+                document.getElementById('results').classList.add('show');
+            });
+        </script>
+
+
+        <div id="results" class="results-container">
+            <div class="plan-results" id="plan1-results">
+                <h3>Plan 1 Results</h3>
+                <p>Duration: <span id="plan1-months">0</span></p>
+                <p>Total Price: <span id="plan1-total">0</span></p>
+                <p>Advance Payment: <span id="plan1-advance">0</span></p>
+                <p>Monthly Payment: <span id="plan1-monthly">0</span></p>
+                <p>Weekly Payment: <span id="plan1-weekly">0</span></p>
+                <p>Daily Payment: <span id="plan1-daily">0</span></p>
+            </div>
+
+
+            <div class="plan-results" id="plan2-results">
+                <h3>Plan 2 Results</h3>
+                <p>Duration: <span id="plan2-months">0</span></p>
+                <p>Total Price: <span id="plan2-total">0</span></p>
+                <p>Advance Payment: <span id="plan2-advance">0</span></p>
+                <p>Monthly Payment: <span id="plan2-monthly">0</span></p>
+                <p>Weekly Payment: <span id="plan2-weekly">0</span></p>
+                <p>Daily Payment: <span id="plan2-daily">0</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
